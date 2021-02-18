@@ -18,7 +18,7 @@
 
 			<a href="#homesection"><span class="blank"> </span></a>
 
-			<a href="index.html"><span id="showtoggle" class="home">Home</span></a>
+			<a href="demo1.html"><span id="showtoggle" class="home">Home</span></a>
 			<a href="#footersection"><span id="showtoggle" class="about">About</span></a>
 			<a href="portfolio.html"><span id="showtoggle" class="contact">Contact</span></a>
 			<a href="enquiry.html"><span id="showtoggle" class="signup">Signup</span></a>
@@ -188,17 +188,18 @@
 				alert("User Field Cannot be Empty");
 
 			}
-			else if (useremail === "") {
+			else if(useremail === "") {
 				alert("Email Field Cannot be Empty");
 
 			}
-			else if (num === "") {
+			else if(num === "") {
 				alert("Mobile Number Cannot be Blank");
 
 			}
-			else {
+			else{
 				genderCheck();
 				showInput();
+		
 			}
 
 		}
@@ -223,14 +224,15 @@
 			document.getElementById('showgender').textContent = gender;
 
 		}
-		
 		$(document).ready(function () {
-			$("button").click(function () {
+		$("button").click(function () {
 				$(".nav").fadeIn(3500);
 				$(".footer").fadeIn(3500);
 				$(".form").hide(5000);
-				alert("your form submitted");
-				$("input").focusin(function () {
+				
+			});		
+		$(document).ready(function () {
+			$("input").focusin(function () {
 					$(this).css("background-color", "yellow");
 				});
 				$("input").blur(function () {
