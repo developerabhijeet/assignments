@@ -1,0 +1,74 @@
+.marqhead{
+  background-color: black;
+  color:white;
+  width: 370px;
+  padding:20px;
+}
+.darkcard{
+  background-color: black;
+  color: white;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #383838;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #383838;
+  font-size: 10px;
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+  font-weight: 30px;
+}
+.grid-item:hover{
+  box-shadow: 1px 10px 1px 10px #888888;
+  font-size: 15px;
+  font-weight: 60px;
+  color:black;
+  
+  margin: 0 auto;
+  text-align: justify;
+  align-items: left;
+  
+}
+.footer{
+  max-width: 80rem;
+  padding-left: 60px;
+  margin-left: 85px;
+  margin-right: 80px;
+  padding-right: 80px;
+  padding-top:40px;
+  margin-top: 50px;
+
+
+}
+.social-icon{
+  width: 80px;
+  height: 60px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid gold;
+}
+.social-icon:hover{
+  width: 80px;
+  height: 60px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 0.5;
+  border: 1px solid white;
+}
+.icon{
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.teamimage{
+  width: 120;
+  height: 100px;
+}

@@ -188,17 +188,18 @@
 				alert("User Field Cannot be Empty");
 
 			}
-			else if (useremail === "") {
+			else if(useremail === "") {
 				alert("Email Field Cannot be Empty");
 
 			}
-			else if (num === "") {
+			else if(num === "") {
 				alert("Mobile Number Cannot be Blank");
 
 			}
-			else {
+			else{
 				genderCheck();
 				showInput();
+		
 			}
 
 		}
@@ -223,18 +224,15 @@
 			document.getElementById('showgender').textContent = gender;
 
 		}
-		/*
-		$("#nav-toggle").click(function(){
-	$(".nav").slideToggle("slow");
-	$("nav-toggle").fadeOut();
-});*/
 		$(document).ready(function () {
-			$("button").click(function () {
+		$("button").click(function () {
 				$(".nav").fadeIn(3500);
 				$(".footer").fadeIn(3500);
 				$(".form").hide(5000);
-				alert("your form submitted");
-				$("input").focusin(function () {
+				
+			});		
+		$(document).ready(function () {
+			$("input").focusin(function () {
 					$(this).css("background-color", "yellow");
 				});
 				$("input").blur(function () {
