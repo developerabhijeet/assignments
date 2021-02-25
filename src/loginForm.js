@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
-import Input  from "./input";
-class LoginForm extends Component {
-constructor(props){
+
+import Joi from 'joi-browser';
+import Form from './form';
+class LoginForm extends Form {
+
+  constructor(props){
   super(props);
-  this.state={
-    account:{username:'', password:''}
-  };
+this.state={
+  data:{username:"", password:""},
+  errors:{}
+
+};
+this.schema = {
+  username:Joi.string().required().label('Username'),
+  password:Joi.string().required().label('Password')
+};
+
+this.doSubmit=this.doSubmit.bind(this);
+
 }
-  handleSubmit(e){
-    e.preventDefault(); 
-    const username = this.username.current.value;
-  };
-  handleChange({currentTarget: input}){
-    var account = {...this.state.account};
-    account[input.name]=input.value;
-    this.setState({account}); 
-  }; 
+
+
+   doSubmit(){
+     console.log("submit");
+   }
+
   render() {
-    const {account} = this.state;
+   
     return (
      <div>
        <h1>Login Form</h1>
        
-      <form onSubmit={this.handleSubmit}>
-         <Input name="username" value={account.username} label="Username" onChange={this.handleChange}/>
-         <Input name="password" value={account.password} label="Password" onChange={this.handleChange}/>
-       </form>
+      <form onSubmit={this.handleSubmit.bind(this)}>
+        {this.renderInput('username','Username','text')}
+         {this.renderInput('password','Password','password')}
+         <br/> 
+         {this.renderButton('Login')}
+         </form>
      </div>
+
     );
   }
 }

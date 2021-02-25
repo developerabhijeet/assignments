@@ -15,6 +15,7 @@ function Navbar() {
             <NavLink className="nav-link nav-item" to="/contact">Contact</NavLink>
 
             <NavLink className="nav-link nav-item" to="/login">Login</NavLink>
+            <NavLink className="nav-link nav-item" to="/register">Register</NavLink>
           </div>
         </div>
       </div>
