@@ -1,0 +1,39 @@
+Install NVM on Ubuntu
+A shell script is available for the installation of NVM on Ubuntu 20.04 Linux system. Open a terminal on your system or connect remote system using SSH. Use the following commands to install curl on your system then run NVM installer script.
+
+sudo apt install curl 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+The NVM installer script create environment entry to login script of current user. You can either logout and login again to load the environment or just execute below command to do the same.
+
+source ~/.profile   
+Install Node.js using NVM
+You can install multiple Node.js versions using nvm. And use required version for your application from installed Node.js.
+
+Install the latest version of Node.js. Here latest is the alias for the latest node version.
+
+nvm install latest     ## install latest available node version
+nvm install stable     ## install latest stable node version
+To install a specific version of node:
+
+nvm install 12  
+You can choose any other version to install using above command. The very first version installed becomes the default. New shells will start with the default version of node (e.g., nvm alias default).
+
+Useful NVM Commands
+You can use the following command to list installed version’s of Node for the current user.
+
+nvm ls 
+With this command you can find available Node.js version for the installation.
+
+nvm ls-remote 
+You can also select a different version for the current session. This will be current active version for current shell only.
+
+nvm use 12 
+To find the default Node version set for the current user, type:
+
+nvm run default --version 
+You can run a Node script with the desired version of node.js using below command:
+
+nvm exec 12 server.js 
+Conclusion
+This tutorial helped you to install nvm on Ubuntu 18.04 LTS Linux system.
+
