@@ -1,16 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MyForm from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {createStore} from 'redux';
+import allreducers from './Reducers/combinedReducers';
+import {Provider} from 'react-redux';
+const store = createStore(allreducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
+/*
+const increment = (value) =>{
+  return {type: 'INCREMENT', payload:value}
+}
+const decrement = () =>{
+  return {type: 'DECREMENT'}
+}
+const counterReducer = (state=0, action)=>{
+  switch(action.type){
+    case 'INCREMENT':
+      return state+ action.payload;
+    case 'DECREMENT':
+      return state -1;
+    default:
+      return state;
+  }
+}
+let store = createStore(counterReducer)
+store.subscribe(()=>{
+  console.log(store.getState())
+})
+store.dispatch(increment(5))*/
 ReactDOM.render(
-  <BrowserRouter>
+  <Provider store={store}>
   <React.StrictMode>
-    <MyForm />
-  </React.StrictMode>
-  </BrowserRouter>,
+    <App />
+  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

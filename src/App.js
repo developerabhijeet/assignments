@@ -1,28 +1,23 @@
-import react, { Component } from 'react'; 
-import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
-import Home from './home';
-import Contact from './contact';
-import About from './about';
-import Navbar from './navbar';
-import NotFound from './NotFound';
-import LoginForm from './loginForm';
+import { React } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, auth } from './actions';
 import './App.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
+  const counter = useSelector(state => state.counter)
+  const login = useSelector(state => state.login)
+  const dispatch = useDispatch();
+  const btnText = login?'Logout':'Login';
   return (
-  
-  <div className="App">
-    
-  <Navbar />
-  <Switch>
-  <Route path="/about" component={About}/>
-  <Route path="/contact" component={Contact}/>
-  <Redirect from="/project" to="/" />
-  <Route path="/not-found" component={NotFound}/>
-  <Route path="/login" component={LoginForm}/>
-  <Route path="/" exact component={Home}/>
-  <Redirect to="/not-found" />
-   </Switch>
-  </div>
+    <div className="App">
+      <h1>Counter{counter}</h1>
+      <button className="btn btn-success" onClick={()=>dispatch(increment())}> + </button>
+      <button className="btn btn-danger" onClick={()=>dispatch(decrement())}> - </button>
+      <p>{login?<h3>LogedIn</h3>:<h3>Not Yet LogedIn</h3>}</p>
+      <button className="btn btn-danger" onClick={()=>dispatch(auth())}> {btnText} </button>
+      
+    </div>
   );
 }
 
